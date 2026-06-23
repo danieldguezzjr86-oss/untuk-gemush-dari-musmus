@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Gemush 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+background:linear-gradient(180deg,#030712,#07152f,#0d2248);
+}
+
+section{
+padding:100px 8%;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+}
+
+.hero h1{
+font-size:4rem;
+max-width:800px;
+margin-bottom:25px;
+}
+
+.hero p{
+opacity:.8;
+margin-bottom:30px;
+}
+
+.btn{
+padding:14px 30px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#1e40af,#60a5fa);
+color:white;
+font-size:1rem;
+cursor:pointer;
+text-decoration:none;
+transition:.4s;
+display:inline-block;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 0 20px rgba(96,165,250,.5);
+}
+
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#93c5fd;
+}
+
+.timeline{
+max-width:800px;
+margin:auto;
+position:relative;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:50%;
+top:0;
+width:3px;
+height:100%;
+background:#3b82f6;
+transform:translateX(-50%);
+}
+
+.timeline-item{
+width:50%;
+padding:20px;
+position:relative;
+}
+
+.timeline-item:nth-child(odd){
+left:0;
+text-align:right;
+}
+
+.timeline-item:nth-child(even){
+left:50%;
+}
+
+.timeline-content{
+background:rgba(255,255,255,.05);
+padding:20px;
+border-radius:15px;
+}
+
+
+.envelope{
+width:350px;
+margin-bottom:20px;
+}
+
+.envelope-body{
+display:none;
+}
+
+.flap{
+display:none;
+}
+
+.letter{
+display:none;
+background:white;
+color:#111;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.envelope.open .letter{
+display:block;
+animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.envelope-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.quote{
+    font-family:'Playfair Display',serif;
+    font-size:1.3rem;
+    color:#bfdbfe;
+    margin-bottom:20px;
+    max-width:700px;
+    line-height:1.8;
+}
+
+.hint{
+    margin-top:12px;
+    opacity:.7;
+    font-size:.9rem;
+}
+
+#openBtn{
+    margin:auto;
+}
+
+.secret-letter{
+    display:none;
+    margin-top:35px;
+    max-width:700px;
+    background:rgba(255,255,255,.95);
+    color:#111;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+    text-align:left;
+    line-height:1.9;
+}
+
+.secret-letter.show{
+    display:block;
+    animation:fadeIn .8s ease;
+}
+
+.letter-decoration{
+    width:100px;
+    height:4px;
+    margin:0 auto 25px;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #60a5fa,
+        white,
+        #60a5fa,
+        transparent
+    );
+}
+
+.secret-letter h3{
+    text-align:center;
+    margin-bottom:20px;
+    color:#1e40af;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.closing{
+text-align:center;
+}
+
+.closing h2{
+margin-bottom:20px;
+}
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.timeline::before{
+left:20px;
+}
+
+.timeline-item,
+.timeline-item:nth-child(even),
+.timeline-item:nth-child(odd){
+width:100%;
+left:0;
+text-align:left;
+padding-left:50px;
+}
+
+}
+
+.gallery-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.gallery-slider{
+width:100%;
+max-width:650px;
+position:relative;
+}
+
+.slide{
+display:none;
+text-align:center;
+animation:fadeGallery .8s ease;
+}
+
+.slide.active{
+display:block;
+}
+
+.slide img{
+max-width:100%;
+max-height:600px;
+width:auto;
+height:auto;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.slide p{
+margin-top:15px;
+color:#bfdbfe;
+font-style:italic;
+}
+
+.slider-btn{
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+cursor:pointer;
+font-size:1.5rem;
+background:rgba(255,255,255,.1);
+color:white;
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.slider-btn:hover{
+background:#2563eb;
+transform:scale(1.1);
+}
+
+@keyframes fadeGallery{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.gallery-container{
+flex-direction:column;
+}
+
+.slide img{
+height:280px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<section class="hero">
+<h1>Hai adek, ada sesuatu yang musmus ingin sampaikan.</h1>
+<p>Website kecil ini dibuat khusus untuk adek gemush mwehehee.</p>
+<a href="#tentang" class="btn">Klik untuk Melanjutkan</a>
+</section>
+
+<section id="tentang">
+<h2 class="section-title hidden">Tentang Kamu</h2>
+
+<div class="cards">
+<div class="card hidden">
+<h3>🌷 Senyummu</h3>
+<p>Ada sesuatu yang selalu membuat hari terasa lebih baik ketika melihat senyummu.</p>
+</div>
+
+<div class="card hidden">
+<h3>✨ Kepribadianmu</h3>
+<p>Cara kamu berbicara dan memperlakukan orang lain selalu membuat kagum walaupun agak ngegas hahahaa.</p>
+</div>
+
+<div class="card hidden">
+<h3>💙 Kehadiranmu</h3>
+<p>Entah kenapa, kehadiranmu membuat banyak hal terasa lebih menyenangkan walaupun bete terus itupun gara-gara aku usilin hahahaa.</p>
+</div>
+
+<div class="card hidden">
+<h3>🌙 Caramu Menjadi Diri Sendiri</h3>
+<p>Yang paling menarik adalah kamu tidak perlu menjadi orang lain untuk terlihat istimewa. Jangan insecure lagi yaa. kamu ga perlu jadi orang lain agar terlihat lebih istimewa cukup jadi diri sendiri aja udah sempurna sayangg</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title hidden">Momen Favorit</h2>
+
+<div class="timeline">
+
+<div class="timeline-item hidden">
+<div class="timeline-content">
+<h3>Pertama Kali Mengenalmu</h3>
+<p>Momen sederhana yang ternyata menjadi awal dari banyak cerita.</p>
+</div>
+</div>
+
+<div class="timeline-item hidden">
+<div class="timeline-content">
+<h3>Obrolan Panjang</h3>
+<p>Ketika waktu terasa berjalan lebih cepat karena asyik berbincang sampai subuh itu lohh.</p>
+</div>
+</div>
+
+<div class="timeline-item hidden">
+<div class="timeline-content">
+<h3>Tawa yang Tak Terlupakan</h3>
+<p>Momen kecil yang masih tersimpan rapi dalam ingatan.</p>
+</div>
+</div>
+
+<div class="timeline-item hidden">
+<div class="timeline-content">
+<h3>Hari Ini</h3>
+<p>Dan sekarang, aku membuat halaman ini untukmu.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+    <h2 class="section-title hidden">Galeri Kenangan</h2>
+
+    <div class="gallery-container hidden">
+
+        <button class="slider-btn prev">&#10094;</button>
+
+        <div class="gallery-slider">
+
+    <div class="slide active">
+        <img src="images/foto1.jpeg" alt="Kenangan 1">
+        <p>Momen dimana hari pertama kita bertemu hehee 💙</p>
+    </div>
+
+    <div class="slide">
+        <img src="images/foto2.jpeg" alt="Kenangan 2">
+        <p>Photobooth indocamp anjayy ✨</p>
+    </div>
+
+    <div class="slide">
+        <img src="images/foto3.jpeg" alt="Kenangan 3">
+        <p>Twins map Lonely</p>
+    </div>
+
+    <div class="slide">
+        <img src="images/foto4.jpeg" alt="Kenangan 4">
+        <p>ini adalah foto pertama kamu tiba-tiba minta peluk karena kamu lagi cape 🌷</p>
+    </div>
+
+    <div class="slide">
+        <img src="images/foto5.jpeg" alt="Kenangan 5">
+        <p>ini kita lagi kumpul di balkon tempat favorite kita dan awal-awal kamu kenal DIKAnjut ✨</p>
+    </div>
+
+    <div class="slide">
+        <img src="images/foto6.jpeg" alt="Kenangan 6">
+        <p>Terima kasih sudah menjadi bagian dari cerita ini 💙</p>
+    </div>
+
+</div>
+
+        <button class="slider-btn next">&#10095;</button>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title hidden">Pesan Rahasia</h2>
+
+    <div class="envelope-wrap">
+
+        <div class="quote">
+            ✨ Ada sesuatu yang ingin kusampaikan, jika kamu berkenan membacanya ✨
+        </div>
+
+        <button class="btn" id="openBtn">
+            💌 Buka Surat
+        </button>
+
+        <p class="hint">
+            Klik tombol di atas untuk membaca suratnya 💙
+        </p>
+
+        <div id="secretLetter" class="secret-letter">
+            <div class="letter-decoration"></div>
+
+            <h3>Untuk Gemush 💙</h3>
+
+            <p>
+                Kalau adek membaca ini, berarti adek sudah sampai di bagian terpenting dari website ini hehee.
+            <p>
+                Kita kan sudah melewati banyak cerita bersama. Ada tawa, perhatian, sleepcall ngobrol sampai larut malam, banyak momen yang tanpa sadar adek menjadi bagian terbaik dari hari musmus dan banyak hal lainnya. Awalnya musmus kira perasaan ini ni akan biasa saja yang dimana saat kita masih awal-awal mengenal. Tapi semakin lama mengenal adek, semakin aku sadar bahwa adek bukan lagi sekadar seseorang yang sering kuajak bicara. Adek menjadi orang yang selalu ingin kutemui tapi jarak kita kan jauh jadi sabar yaah, menceritakan hariku, dan musmus usahakan kebahagiaan adek.
+            <p>
+                Musmus tau, tidak semua orang mau bertahan dalam hubungan yang tidak memiliki status yang jelas. Tapi adek beda, kamu tetap ada, adek tetap peduli. Tetap memberi tempat untukku dalam hidup adek walaupun sebelum-sebelumnya banyak hal yang udah kita lewatin. Terima kasih yahhh karena sudah sesabar itu.
+            <p>
+                Jadi melalui pesan ini, musmus mau nanya dan memastikan, adek jawab dengan jujur yahhh
+            <p>
+                <h3>Adek mau nda jadi pacar musmus?
+            </p>
+                Jawabnya klik tombol di bawah yahh
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="closing">
+<h2>Terima kasih sudah menjadi bagian dari cerita yang indah.</h2>
+
+<a class="btn"
+href="https://wa.me/6281274016371?text=Mus%20adek%20udah%20baca%20suratnya,%20Adek%20mauuuu%20muuussssss💙"
+target="_blank">
+Jawaban 😊
+</a>
+</section>
+
+<script>
+
+/* Particles */
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="rgba(255,255,255,.8)";
+
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+
+p.y+=p.d;
+
+if(p.y>canvas.height){
+p.y=0;
+}
+});
+
+requestAnimationFrame(draw);
+}
+
+draw();
+
+window.addEventListener('resize',()=>{
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+});
+
+/* Scroll Animation */
+
+const hidden=document.querySelectorAll('.hidden');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+hidden.forEach(el=>observer.observe(el));
+
+
+/* Envelope */
+
+document.getElementById("openBtn").addEventListener("click", function(){
+
+const letter = document.getElementById("secretLetter");
+
+letter.classList.toggle("show");
+
+if(letter.classList.contains("show")){
+this.innerHTML = "💙 Tutup Surat";
+}else{
+this.innerHTML = "💌 Buka Surat";
+}
+
+});
+
+/* Gallery Slider */
+
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let currentSlide = 0;
+
+function showSlide(index){
+
+slides.forEach(slide=>{
+slide.classList.remove("active");
+});
+
+slides[index].classList.add("active");
+}
+
+nextBtn.addEventListener("click",()=>{
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+showSlide(currentSlide);
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+currentSlide--;
+
+if(currentSlide < 0){
+currentSlide = slides.length - 1;
+}
+
+showSlide(currentSlide);
+
+});
+
+</script>
+
+</body>
+</html>
+```
